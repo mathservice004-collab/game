@@ -93,7 +93,7 @@ export class PlayScene extends Phaser.Scene {
             useGameStore.getState().setLevel(newLevel);
 
             // Visual feedback for level up
-            this.cameras.main.flash(500, 0, 229, 255, 0.3); // Flash neon blue
+            this.cameras.main.flash(500, 0, 229, 255); // Flash neon blue
         }
 
         // Cleanup obstacles
