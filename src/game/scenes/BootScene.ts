@@ -22,7 +22,7 @@ export class BootScene extends Phaser.Scene {
 
     createTextures() {
         // Player ship
-        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
+        const graphics = this.make.graphics({ x: 0, y: 0 });
 
         // Player
         graphics.lineStyle(2, 0x00e5ff, 1);
