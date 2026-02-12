@@ -83,10 +83,17 @@ export class PlayScene extends Phaser.Scene {
             useGameStore.getState().setScore(roundedScore);
         }
 
-        // Increase speed
+        // Increase speed and Level
         if (this.score > this.nextSpeedIncrease) {
-            this.gameSpeed += 50;
+            this.gameSpeed += 60;
             this.nextSpeedIncrease += 1000;
+
+            const currentLevel = useGameStore.getState().level;
+            const newLevel = currentLevel + 1;
+            useGameStore.getState().setLevel(newLevel);
+
+            // Visual feedback for level up
+            this.cameras.main.flash(500, 0, 229, 255, 0.3); // Flash neon blue
         }
 
         // Cleanup obstacles
